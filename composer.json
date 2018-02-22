@@ -1,0 +1,24 @@
+{
+    "name": "svenvdz/muntphp",
+    "description": "MuntPHP is a library by Munt to interact with Munt Checkout.",
+    "keywords": ["MuntPHP", "cryptocurrency", "merchants", "Bitcoin", "BitcoinCash", "Litecoin", "Ethereum", "Monero", "Dash", "Ripple"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Munt",
+            "email": "hello@getmunt.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=5.4"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "5.2.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "svenvdz\\muntphp\\": "src/"
+        }
+    }
+}
