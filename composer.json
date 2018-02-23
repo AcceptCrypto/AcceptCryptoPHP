@@ -1,5 +1,5 @@
 {
-    "name": "svenvdz/MuntPHP",
+    "name": "svenvdz/muntphp",
     "description": "MuntPHP is a library by Munt to interact with Munt Checkout.",
     "keywords": ["MuntPHP", "cryptocurrency", "merchants", "Bitcoin", "BitcoinCash", "Litecoin", "Ethereum", "Monero", "Dash", "Ripple"],
     "license": "MIT",
