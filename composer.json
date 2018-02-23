@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "Munt",
-            "email": "sup@getmunt.com"
+            "email": "hello@getmunt.com"
         }
     ],
     "type": "project",
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MuntPay\\muntphp\\": "src/"
+            "svenvdz\\muntphp\\": "src/"
         }
     },
    "repositories": {
