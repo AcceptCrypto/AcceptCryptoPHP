@@ -1,6 +1,6 @@
 <?php
 
-//namespace svenvdz\muntphp;
+namespace muntpay
 
 /**
 *  Munt class
