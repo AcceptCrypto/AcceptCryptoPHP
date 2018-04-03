@@ -7,6 +7,7 @@ namespace muntpay;
 *
 *  @author Munt
 */
+
 class Munt {
 
 	public static function custom($name, $amount, $currency, $background = "FABD58", $email_address = "", $bearer) {
