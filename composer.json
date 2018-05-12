@@ -1,12 +1,12 @@
 {
-    "name": "muntpay/muntphp",
-    "description": "MuntPHP is a library by Munt to interact with Munt Checkout.",
-    "keywords": ["MuntPHP", "cryptocurrency", "merchants", "Bitcoin", "BitcoinCash", "Litecoin", "Ethereum", "Monero", "Dash", "Ripple"],
+    "name": "acceptcrypto/acceptcryptophp",
+    "description": "AcceptCryptoPHP is a library by Munt to interact with Munt Checkout.",
+    "keywords": ["AcceptCrypto PHP", "cryptocurrency", "merchants", "Bitcoin", "BitcoinCash", "Litecoin", "Ethereum", "Monero", "Dash", "Ripple"],
     "license": "MIT",
     "authors": [
         {
             "name": "Munt",
-            "email": "hello@getmunt.com"
+            "email": "hello@acceptcryp.to"
         }
     ],
     "type": "project",
