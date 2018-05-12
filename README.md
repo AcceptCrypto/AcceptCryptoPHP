@@ -1,17 +1,17 @@
-# Munt PHP library
-Documentation: https://docs.getmunt.com
+# AcceptCrypto PHP library
+Documentation: https://docs.acceptcryp.to
 
 The PHP library is meant for creating custom checkout forms and verifying a payment in the back-end. It's a good practise to keep verifying the payment till its fully confirmed.
 
 ### Getting started
-You can either install our library using composer `composer require muntpay/muntphp` or download the source code directly from [GitHub](https://github.com/muntpay/muntPHP)
+You can either install our library using composer `composer require acceptcrypto/acceptcryptophp` or download the source code directly from [GitHub](https://github.com/acceptcrypto/acceptcryptophp)
 
 ### Integrating
 
 #### Start checkout process
 Add an email address to a payment automatically, to make sure customers use the same email as they did on your website for example. Email address is optional but recommended.
 ```PHP
-$response = Munt::checkout({{TOKEN}}, {{CUSTOMER EMAIL ADDRESS}});
+$response = AcceptCrypto::checkout({{TOKEN}}, {{CUSTOMER EMAIL ADDRESS}});
 ```
 The response will be as followed;
 1. error
@@ -24,9 +24,9 @@ The response will be as followed;
 	- String, can be redirected to to let the user pay
 
 #### Create a custom checkout form
-This code can be used to create a custom checkout form in the back-end rather than on our dashboard. The background and customer email address are both optional parameters but recommended. The background color will be the Munt color #FABD58 by default.
+This code can be used to create a custom checkout form in the back-end rather than on our dashboard. The background and customer email address are both optional parameters but recommended. The background color will be the AcceptCrypto color #FABD58 by default.
 ```PHP
-$response = Munt::custom({{NAME}}, {{AMOUNT}}, {{CURRENCY}}, {{BACKGROUND}}, {{CUSTOMER EMAIL ADDRESS}}, {{API KEY}});
+$response = AcceptCrypto::custom({{NAME}}, {{AMOUNT}}, {{CURRENCY}}, {{BACKGROUND}}, {{CUSTOMER EMAIL ADDRESS}}, {{API KEY}});
 ```
 The response will be as followed;
 1. error
@@ -41,7 +41,7 @@ The response will be as followed;
 #### Checking payment id
 Check if the payment has been successful from the above returned payment id.
 ```PHP
-$tx = Munt::tx({{ID}}, {{API KEY}});
+$tx = AcceptCrypto::tx({{ID}}, {{API KEY}});
 ```
 The response will be as followed;
 1. error
@@ -58,7 +58,7 @@ The response will be as followed;
 #### Checking email
 Check if the given email address has paid successfully.
 ```PHP
-$email = Munt::email({{EMAIL}}, {{API KEY}});
+$email = AcceptCrypto::email({{EMAIL}}, {{API KEY}});
 ```
 The response will be as followed;
 1. error
