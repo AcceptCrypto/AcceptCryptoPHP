@@ -1,6 +1,6 @@
 <?php
 
-namespace muntpay;
+namespace acceptcrypto;
 
 /**
 *  Munt class
