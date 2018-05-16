@@ -8,13 +8,13 @@ namespace muntpay;
 *  @author Munt
 */
 
-class Munt {
+class AcceptCrypto {
 
 	public static function custom($name, $amount, $currency, $background = "FABD58", $email_address = "", $bearer) {
 
 		$response = array();
 
-		$url = "https://getmunt.com/api/v1/form";
+		$url = "https://acceptcryp.to/api/v1/form";
 
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_POST, 1);
@@ -33,7 +33,7 @@ class Munt {
 
 				$token = $result["token"];
 
-				$url2 = "https://getmunt.com/api/v1/payment/".$token;
+				$url2 = "https://acceptcryp.to/api/v1/payment/".$token;
 
 				$curl2 = curl_init($url2);
 				curl_setopt($curl2, CURLOPT_POST, 1);
@@ -51,7 +51,7 @@ class Munt {
 
 						$response["error"] = false;
 						$response["token"] = $paymentToken;
-						$response["url"] = "https://getmunt.com/checkout/".$paymentToken;
+						$response["url"] = "https://acceptcryp.to/checkout/".$paymentToken;
 
 					} else {
 
@@ -85,7 +85,7 @@ class Munt {
 
 		$response = array();
 
-		$url2 = "https://getmunt.com/api/v1/payment/".$token;
+		$url2 = "https://acceptcryp.to/api/v1/payment/".$token;
 
 		$curl2 = curl_init($url2);
 		curl_setopt($curl2, CURLOPT_POST, 1);
@@ -103,7 +103,7 @@ class Munt {
 
 				$response["error"] = false;
 				$response["token"] = $paymentToken;
-				$response["url"] = "https://getmunt.com/checkout/".$paymentToken;
+				$response["url"] = "https://acceptcryp.to/checkout/".$paymentToken;
 
 			} else {
 
@@ -129,7 +129,7 @@ class Munt {
 
         if (isset($tx_id)) {
 
-            $curl = curl_init("https://getmunt.com/api/v1/payment/".$tx_id);
+            $curl = curl_init("https://acceptcryp.to/api/v1/payment/".$tx_id);
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_HTTPHEADER, array(
@@ -168,7 +168,7 @@ class Munt {
 
         if (isset($tx_id)) {
 
-            $curl = curl_init("https://getmunt.com/api/v1/email/".$token."/".$email);
+            $curl = curl_init("https://acceptcryp.to/api/v1/email/".$token."/".$email);
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_HTTPHEADER, array(
@@ -207,7 +207,7 @@ class Munt {
 
         if (isset($tx_id)) {
 
-            $curl = curl_init("https://getmunt.com/api/v1/info/".$tx_id);
+            $curl = curl_init("https://acceptcryp.to/api/v1/info/".$tx_id);
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_HTTPHEADER, array(
