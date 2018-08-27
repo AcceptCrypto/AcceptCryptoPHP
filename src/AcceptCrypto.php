@@ -3,9 +3,9 @@
 namespace acceptcrypto;
 
 /**
-*  Munt class
+*  AcceptCrypto class
 *
-*  @author Munt
+*  @author AcceptCrypto
 */
 
 class AcceptCrypto {
@@ -47,10 +47,10 @@ class AcceptCrypto {
 
 					if(!$result2["error"]) {
 
-						$paymentToken = $result2["token"];
+						$paymentToken = $result2["payment_id"];
 
 						$response["error"] = false;
-						$response["token"] = $paymentToken;
+						$response["payment_id"] = $paymentToken;
 						$response["url"] = "https://acceptcryp.to/checkout/".$paymentToken;
 
 					} else {
@@ -99,10 +99,10 @@ class AcceptCrypto {
 
 			if(!$result2["error"]) {
 
-				$paymentToken = $result2["token"];
+				$paymentToken = $result2["payment_id"];
 
 				$response["error"] = false;
-				$response["token"] = $paymentToken;
+				$response["payment_id"] = $paymentToken;
 				$response["url"] = "https://acceptcryp.to/checkout/".$paymentToken;
 
 			} else {
@@ -121,20 +121,17 @@ class AcceptCrypto {
 
 	}
 
-    public static function tx($tx_id, $bearer) {
+    public static function tx($payment_id) {
 
         //confirm if payment is made and check transaction status on the Blockchain
 
         $response = array();
 
-        if (isset($tx_id)) {
+        if (isset($payment_id)) {
 
-            $curl = curl_init("https://acceptcryp.to/api/v1/payment/".$tx_id);
+            $curl = curl_init("https://acceptcryp.to/api/v1/payment/".$payment_id);
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-                "Authorization: Bearer " . $bearer
-            ));
             $result = curl_exec($curl);
 
             if ($result) {
@@ -160,7 +157,7 @@ class AcceptCrypto {
 
     }
 
-    public static function email($token, $email, $bearer) {
+    public static function email($token, $email) {
 
         //confirm if payment is made and check transaction status on the Blockchain
 
@@ -171,9 +168,6 @@ class AcceptCrypto {
             $curl = curl_init("https://acceptcryp.to/api/v1/email/".$token."/".$email);
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-                "Authorization: Bearer " . $bearer
-            ));
             $result = curl_exec($curl);
 
             if ($result) {
@@ -199,15 +193,15 @@ class AcceptCrypto {
 
     }
 
-    public static function transaction($tx_id, $bearer){
+    public static function transaction($payment_id, $bearer){
 
         //get transaction information (Address, Amount, tx_id)
 
         $response = array();
 
-        if (isset($tx_id)) {
+        if (isset($payment_id)) {
 
-            $curl = curl_init("https://acceptcryp.to/api/v1/info/".$tx_id);
+            $curl = curl_init("https://acceptcryp.to/api/v1/info/".$payment_id);
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_HTTPHEADER, array(
